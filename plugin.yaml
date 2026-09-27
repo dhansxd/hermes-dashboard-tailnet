@@ -1,0 +1,3 @@
+name: dashboard-tailnet
+version: 1.0.0
+description: Telegram admin slash command to toggle Hermes dashboard and Tailscale Serve
