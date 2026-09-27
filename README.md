@@ -37,11 +37,11 @@ For bash, replace `read -s 'DASHBOARD_PASSWORD?New dashboard password: '` with `
 Find your numeric Telegram user ID via `/whoami` in your Hermes bot DM (not the bot ID or chat name). Allow only the account(s) that may control the dashboard:
 
 ```bash
-hermes plugins install YOUR_GITHUB_USER/hermes-dashboard-tailnet --enable
+hermes plugins install dhansxd/hermes-dashboard-tailnet --enable
 hermes config set --force plugins.entries.dashboard-tailnet.settings.admin_ids '["YOUR_NUMERIC_TELEGRAM_USER_ID"]'
 ```
 
-Replace `YOUR_GITHUB_USER` with the repository owner (see repo URL). JSON brackets are intentional: `admin_ids` must be a list of strings. **Fail closed:** without IDs, nobody can control it. If your Hermes gateway has separate slash-command gating, add the same ID to `platforms.telegram.extra.allow_admin_from` or permit these commands for that user. `allow_from` (who may chat) is **not** an admin grant. The commands only work in a Telegram DM, never a group or a different platform. If your gateway does not load the new plugin immediately, follow the official [plugin reload instructions](https://hermes-agent.nousresearch.com/docs/user-guide/features/plugins). Some installations require an operator-triggered gateway restart.
+JSON brackets are intentional: `admin_ids` must be a list of strings. **Fail closed:** without IDs, nobody can control it. If your Hermes gateway has separate slash-command gating, add the same ID to `platforms.telegram.extra.allow_admin_from` or permit these commands for that user. `allow_from` (who may chat) is **not** an admin grant. The commands only work in a Telegram DM, never a group or a different platform. If your gateway does not load the new plugin immediately, follow the official [plugin reload instructions](https://hermes-agent.nousresearch.com/docs/user-guide/features/plugins). Some installations require an operator-triggered gateway restart.
 
 ## 4. Use
 
